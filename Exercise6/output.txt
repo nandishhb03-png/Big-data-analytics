@@ -1,0 +1,7 @@
+WEATHER DATA ANALYSIS USING HADOOP MAPREDUCE
+
+========================================
+
+Output:
+
+Coldest Day: 2024-01-03 with 10.0°C
