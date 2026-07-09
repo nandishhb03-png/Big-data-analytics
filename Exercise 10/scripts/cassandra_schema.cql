@@ -1,8 +1,3 @@
-services:
-  cassandra:
-    image: cassandra:latest
-    container_name: cassandra
-    hostname: cassandra
 -- ============================================
 -- CASSANDRA SCHEMA FOR MUSIC STREAMING ANALYTICS
 -- ============================================
@@ -84,42 +79,5 @@ CREATE TABLE IF NOT EXISTS user_recommendations (
     score DECIMAL,
     reason TEXT,
     PRIMARY KEY (user_id, song)
-);
-
+)
 DESC TABLES;
-    ports:
-      - "9042:9042"
-      - "9160:9160"
-
-    environment:
-      - CASSANDRA_CLUSTER_NAME=AnalyticsCluster
-      - CASSANDRA_DC=datacenter1
-      - CASSANDRA_RACK=rack1
-      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
-
-    volumes:
-      - ./cassandra-data:/var/lib/cassandra
-      - ./scripts:/scripts
-
-    restart: unless-stopped
-services:
-  cassandra:
-    image: cassandra:latest
-    container_name: cassandra
-    hostname: cassandra
-
-    ports:
-      - "9042:9042"
-      - "9160:9160"
-
-    environment:
-      - CASSANDRA_CLUSTER_NAME=AnalyticsCluster
-      - CASSANDRA_DC=datacenter1
-      - CASSANDRA_RACK=rack1
-      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
-
-    volumes:
-      - ./cassandra-data:/var/lib/cassandra
-      - ./scripts:/scripts
-
-    restart: unless-stopped
