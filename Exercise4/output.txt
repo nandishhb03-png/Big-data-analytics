@@ -1,0 +1,61 @@
+=========================================================
+Exercise 4 - Hadoop MapReduce Word Count on Multiple Files
+=========================================================
+
+nandi@NandeeshHM:~$ start-dfs.sh
+
+nandi@NandeeshHM:~$ jps
+NameNode
+DataNode
+SecondaryNameNode
+Jps
+
+nandi@NandeeshHM:~$ hdfs dfs -mkdir /my_data_directory
+
+nandi@NandeeshHM:~$ echo "This is the content of file1.txt" > file1.txt
+
+nandi@NandeeshHM:~$ echo "This is the content of file2.txt" > file2.txt
+
+nandi@NandeeshHM:~$ echo "This is the content of file3.txt" > file3.txt
+
+nandi@NandeeshHM:~$ hdfs dfs -put file1.txt /my_data_directory/
+
+nandi@NandeeshHM:~$ hdfs dfs -put file2.txt /my_data_directory/
+
+nandi@NandeeshHM:~$ hdfs dfs -put file3.txt /my_data_directory/
+
+nandi@NandeeshHM:~$ hdfs dfs -ls /my_data_directory
+Found 3 items
+-rw-r--r--   1 nandi supergroup 33 file1.txt
+-rw-r--r--   1 nandi supergroup 33 file2.txt
+-rw-r--r--   1 nandi supergroup 33 file3.txt
+
+nandi@NandeeshHM:~$ hdfs dfs -cat /my_data_directory/file1.txt
+This is the content of file1.txt
+
+nandi@NandeeshHM:~$ hdfs dfs -cat /my_data_directory/file2.txt
+This is the content of file2.txt
+
+nandi@NandeeshHM:~$ hdfs dfs -cat /my_data_directory/file3.txt
+This is the content of file3.txt
+
+nandi@NandeeshHM:~$ hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar wordcount /my_data_directory /wordcount_output
+
+Job completed successfully.
+
+nandi@NandeeshHM:~$ hdfs dfs -cat /wordcount_output/part-r-00000
+This    3
+content 3
+file1.txt       1
+file2.txt       1
+file3.txt       1
+is      3
+of      3
+the     3
+
+nandi@NandeeshHM:~$ hdfs dfs -cat /wordcount_output/part-r-00000 | sort -t$'\t' -k2 -nr | head -3
+the     3
+of      3
+is      3
+
+Exercise completed successfully.
