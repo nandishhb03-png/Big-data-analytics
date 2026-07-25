@@ -1,0 +1,19 @@
+start-dfs.sh
+
+jps
+
+hdfs dfs -ls /
+
+hdfs dfs -mkdir /demo
+
+hdfs dfs -put ~/sample*.txt /demo
+
+hdfs dfs -ls /demo
+
+hdfs dfs -cat /demo/sample1.txt
+
+hdfs dfs -cp /demo/sample1.txt /demo/sample1_copy.txt
+
+hdfs dfs -rm /demo/sample3.txt
+
+hdfs dfs -rm -r /demo
