@@ -1,0 +1,15 @@
+start-dfs.sh
+
+jps
+
+cat tech.txt
+
+hdfs dfs -mkdir /demo
+
+hdfs dfs -put tech.txt /demo
+
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar wordcount /demo /output
+
+hdfs dfs -ls /output
+
+hdfs dfs -cat /output/part-r-00000
