@@ -1,0 +1,5 @@
+Hello Spark
+Hello Big Data
+Spark is Fast
+Big Data is Powerful
+Hello Spark
