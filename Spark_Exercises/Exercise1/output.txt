@@ -1,0 +1,4 @@
+Hadoop: 1
+YARN: 1
+HDFS: 1
+MapReduce: 1

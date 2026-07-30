@@ -1,0 +1,4 @@
+Hadoop
+HDFS
+MapReduce
+YARN
