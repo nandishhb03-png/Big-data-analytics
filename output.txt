@@ -1,0 +1,4 @@
+  File "/home/nandi/Big-data-analytics/log_analysis.py", line 1
+    ==================================================
+    ^^
+SyntaxError: invalid syntax
