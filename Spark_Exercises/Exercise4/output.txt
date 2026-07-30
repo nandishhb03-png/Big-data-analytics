@@ -1,0 +1,38 @@
+==================================================
+Spark Exercise 4 - ETL Pipeline
+Submitted By: Nandeesh H M
+==================================================
+
+Original Data
++-------+----+----------+------+
+|   Name| Age|Department|Salary|
++-------+----+----------+------+
+|  Alice|  25|        IT| 50000|
+|    Bob|  30|        HR| 45000|
+|Charlie|NULL|   Finance| 60000|
+|  David|  28|        IT|  NULL|
+|    Eva|  35| Marketing| 55000|
++-------+----+----------+------+
+
+
+Cleaned Data
++-----+---+----------+------+
+| Name|Age|Department|Salary|
++-----+---+----------+------+
+|Alice| 25|        IT| 50000|
+|  Bob| 30|        HR| 45000|
+|  Eva| 35| Marketing| 55000|
++-----+---+----------+------+
+
+
+Transformed Data
++-----+---+----------+------+-----------------+
+| Name|Age|Department|Salary|   Updated_Salary|
++-----+---+----------+------+-----------------+
+|Alice| 25|        IT| 50000|55000.00000000001|
+|  Bob| 30|        HR| 45000|49500.00000000001|
+|  Eva| 35| Marketing| 55000|60500.00000000001|
++-----+---+----------+------+-----------------+
+
+
+Processed data saved successfully in 'output_data' folder.
