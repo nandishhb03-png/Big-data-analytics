@@ -1,0 +1,31 @@
+nandi@NandeeshHM:~$ lsb_release -a
+nandi@NandeeshHM:~$ sudo apt update
+nandi@NandeeshHM:~$ sudo apt upgrade -y
+nandi@NandeeshHM:~$ sudo apt install curl wget gnupg lsb-release -y
+nandi@NandeeshHM:~$ curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-8.0.gpg
+nandi@NandeeshHM:~$ sudo apt update
+nandi@NandeeshHM:~$ sudo apt install -y mongodb-org
+nandi@NandeeshHM:~$ sudo service mongod start
+nandi@NandeeshHM:~$ sudo service mongod status
+nandi@NandeeshHM:~$ mongosh
+test> use elearning_db
+db.students.insertOne({...})
+db.students.insertMany([...])
+db.students.find().pretty()
+db.students.find({"enrolled_courses.course_id":"C101"}).pretty()
+db.students.find({"enrolled_courses.progress":{$lt:50}}).pretty()
+db.students.updateOne(...)
+db.students.updateMany(...)
+db.students.deleteOne(...)
+db.students.aggregate([...])
+db.students.createIndex({student_id:1})
+db.students.getIndexes()
+db.students.find({student_id:"S001"}).explain("executionStats")
+exit
+
+nandi@NandeeshHM:~$ sudo apt install openjdk-17-jre-headless -y
+nandi@NandeeshHM:~$ java -version
+nandi@NandeeshHM:~$ sudo apt install neo4j -y
+nandi@NandeeshHM:~$ sudo nano /etc/neo4j/neo4j.conf
+nandi@NandeeshHM:~$ sudo neo4j restart
+nandi@NandeeshHM:~$ sudo neo4j status

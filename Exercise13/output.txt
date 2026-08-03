@@ -1,0 +1,33 @@
+Exercise 13
+MongoDB and Neo4j Installation and Hands-on Lab
+
+MongoDB
+
+✔ MongoDB installed successfully
+✔ MongoDB service started
+✔ Connected using mongosh
+✔ Created database: elearning_db
+✔ Inserted student documents
+✔ Executed CRUD operations
+✔ Aggregation pipeline executed successfully
+✔ Index created successfully
+✔ Query performance verified using explain()
+
+Neo4j
+
+✔ Java installed successfully
+✔ Neo4j installed successfully
+✔ Neo4j server started
+✔ Neo4j Browser opened successfully
+✔ Created Student nodes
+✔ Created Course nodes
+✔ Created ENROLLED_IN relationships
+✔ Created FOLLOWS relationships
+✔ Executed Cypher queries
+✔ Updated graph data
+✔ Deleted graph data
+✔ Displayed graph successfully
+
+Result
+
+MongoDB and Neo4j installation and all practical exercises were completed successfully.
